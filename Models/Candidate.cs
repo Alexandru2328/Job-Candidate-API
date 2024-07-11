@@ -12,7 +12,6 @@ namespace Job_Candidate_API.Models
         public string LastName { get; set; } 
         public string PreferredContactTime { get; set; }
         public string PhoneNumber { get; set; }
-
         public string LinkedIn { get; set; }
         public string GitHub { get; set; }
         public string Comments { get; set; }
