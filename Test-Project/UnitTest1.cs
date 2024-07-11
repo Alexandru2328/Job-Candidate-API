@@ -28,7 +28,6 @@ namespace JobCandidateAPI.Tests
         [Fact]
         public async Task UpsertCandidate_ShouldAddNewCandidate()
         {
-            // Arrange
             using var context = CreateContext();
             var controller = new CandidatesController(context);
             var candidate = new Candidate
@@ -43,10 +42,8 @@ namespace JobCandidateAPI.Tests
                 Comments = "Sample comment"
             };
 
-            // Act
             var result = await controller.UpsertCandidate(candidate);
 
-            // Assert
             var okResult = Assert.IsType<OkObjectResult>(result);
             var returnValue = Assert.IsType<Candidate>(okResult.Value);
             Assert.Equal(candidate.Email, returnValue.Email);
@@ -55,7 +52,6 @@ namespace JobCandidateAPI.Tests
         [Fact]
         public async Task UpsertCandidate_ShouldUpdateExistingCandidate()
         {
-            // Arrange
             using var context = CreateContext();
             var existingCandidate = new Candidate
             {
